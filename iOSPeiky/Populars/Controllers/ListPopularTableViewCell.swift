@@ -17,10 +17,9 @@ class ListPopularTableViewCell: UITableViewCell {
     
     
     
-    //Mark: -Functions and IBActions
+    //Mark: -Functions
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     //Mark: -Settings

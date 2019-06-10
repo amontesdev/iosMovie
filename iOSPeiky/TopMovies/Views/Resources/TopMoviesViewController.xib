@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TopMoviesViewController" customModule="iOSPeiky" customModuleProvider="target">
             <connections>
+                <outlet property="loading" destination="wrB-e4-pAJ" id="m9G-QH-Mfh"/>
                 <outlet property="tableView" destination="u8q-1r-FLs" id="Mub-3w-JCn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,6 +26,10 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="wrB-e4-pAJ">
+                    <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                    <color key="color" red="0.32780193959999998" green="0.48778553299999999" blue="0.45773026020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -32,8 +37,10 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="u8q-1r-FLs" secondAttribute="trailing" id="8bO-KJ-ZuV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="u8q-1r-FLs" secondAttribute="trailing" id="BN8-Pa-QYB"/>
                 <constraint firstItem="u8q-1r-FLs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="FBq-eW-jas"/>
+                <constraint firstItem="wrB-e4-pAJ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="KDr-pv-cUC"/>
                 <constraint firstItem="u8q-1r-FLs" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Uiv-zb-W5x"/>
                 <constraint firstItem="u8q-1r-FLs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="VdG-N7-arC"/>
+                <constraint firstItem="wrB-e4-pAJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kvb-FJ-2VO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="u8q-1r-FLs" secondAttribute="bottom" id="tRm-MQ-5OZ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

@@ -9,8 +9,9 @@
 import UIKit
 
 class TopMoviesViewController: BaseViewController {
-    //MARK: - IBOultes
+    //MARK: - IBOultes and Vars
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     var viewModel : ListTopViewModel?
     private var listMovies : ListTopCellResponse?
     static let cellsNibName =  "ListTopTableViewCell"
@@ -28,6 +29,12 @@ class TopMoviesViewController: BaseViewController {
     //MARK: - Functions
     private func settingTableView() {
         tableView.register(UINib(nibName: TopMoviesViewController.cellsNibName, bundle: nil), forCellReuseIdentifier: ListTopTableViewCell.reuseIdentifier)
+    }
+    override func settingNavBar() {
+        self.parent?.title = "Top Rated"
+    }
+    override func hideLoader() {
+        loading.stopAnimating()
     }
 }
 
@@ -53,12 +60,10 @@ extension TopMoviesViewController : UITableViewDelegate, UITableViewDataSource{
         let movieName = listMovies?.results?[indexPath.row].title
         let movieOver = listMovies?.results?[indexPath.row].overview
         let movieImageUrl = listMovies?.results?[indexPath.row].backdrop_path
-        
-        UserDefaults.standard.set(movieName!, forKey: "movieName")
-        UserDefaults.standard.set(movieOver!, forKey: "movieOver")
-        UserDefaults.standard.set(movieImageUrl!, forKey: "movieImageUrl")
-        
         let detailVc = DetailMovieViewController()
+        detailVc.filmName = movieName!
+        detailVc.filmOver = movieOver!
+        detailVc.filmImage = movieImageUrl!
         self.navigationController?.pushViewController(detailVc, animated: true)
     }
 }
@@ -69,6 +74,7 @@ extension TopMoviesViewController : ListTopViewModelView{
     func retrieveInfoView(info: ListTopCellResponse) {
         self.listMovies = info
         tableView.reloadData()
+        hideLoader()
     }
     
     func noData() {

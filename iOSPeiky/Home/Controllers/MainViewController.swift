@@ -10,14 +10,13 @@ import UIKit
 
 class MainViewController: UITabBarController {
 
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        //injectDependeciesToPopularViewModel()
         settingTabBar()
-        
-        // Do any additional setup after loading the view.
     }
     
+    //MARK: - Functions
     func injectDependeciesToPopularViewModel(){
         let popularTab = PopularViewController()
         let service : ListPopularService? = ServiceLocator.sharedInstance.get(service: ListPopularService.self)
@@ -27,23 +26,22 @@ class MainViewController: UITabBarController {
     }
     func settingTabBar(){
         //First Tab
-        //let PopularTab = UINavigationController(rootViewController: PopularViewController())
         let PopularTab = PopularViewController()
         let service : ListPopularService? = ServiceLocator.sharedInstance.get(service: ListPopularService.self)
         PopularTab.viewModel = ListPopularViewModel(view: PopularTab, listPopularService: service)
         PopularTab.tabBarItem =  UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
-        PopularTab.title = "Popular"
+
         
+        //Second Tab
         let topTab = TopMoviesViewController()
         let serviceTop : ListTopService? = ServiceLocator.sharedInstance.get(service: ListTopService.self)
         topTab.viewModel = ListTopViewModel(view: topTab, listTopService: serviceTop)
-        topTab.title = "Top Rate"
         topTab.tabBarItem =  UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
         
+        //Third Tab
         let upTab = UpViewController()
         let serviceUp : ListUpService? = ServiceLocator.sharedInstance.get(service: ListUpService.self)
         upTab.viewModel = ListUpViewModel(view: upTab, listUpService: serviceUp)
-        upTab.title = "Up comming"
         upTab.tabBarItem =  UITabBarItem(tabBarSystemItem: .contacts, tag: 2)
         
         viewControllers = [PopularTab,topTab, upTab]

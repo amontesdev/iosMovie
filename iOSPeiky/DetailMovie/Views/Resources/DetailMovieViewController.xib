@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,44 +20,46 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="i3a-kf-dXa">
-                    <rect key="frame" x="0.0" y="177" width="414" height="544.5"/>
+                    <rect key="frame" x="0.0" y="28" width="414" height="544"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="movie title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayk-4g-OXZ">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="20.333333333333332"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20.329999999999998" id="GZd-Af-kyS"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tUb-oL-2zz">
-                            <rect key="frame" x="21.5" y="83.5" width="371" height="215"/>
+                            <rect key="frame" x="21.666666666666657" y="83.333333333333314" width="370.66666666666674" height="215"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="215" id="iBM-0b-j35"/>
-                                <constraint firstAttribute="width" constant="371" id="j0p-gd-y2Y"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NY7-fV-Cd6">
-                            <rect key="frame" x="0.0" y="361.5" width="414" height="183"/>
+                            <rect key="frame" x="0.0" y="361.33333333333331" width="414" height="182.66666666666669"/>
                             <string key="text">The X-Men face their most formidable and powerful foe when one of their own, Jean Grey, starts to spiral out of control. During a rescue mission in outer space, Jean is nearly killed when she's hit by a mysterious cosmic force. Once she returns home, this force not only makes her infinitely more powerful, but far more unstable. The X-Men must now band together to save her soul and battle aliens that want to use Grey's new abilities to rule the galaxy.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
+                    <color key="backgroundColor" red="0.32780193961221454" green="0.48778553299492389" blue="0.45773026024018171" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="ayk-4g-OXZ" secondAttribute="trailing" id="PEc-zq-5PZ"/>
                         <constraint firstItem="ayk-4g-OXZ" firstAttribute="leading" secondItem="i3a-kf-dXa" secondAttribute="leading" id="wKh-0K-2YB"/>
                     </constraints>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.26875843107338182" green="0.37694321065989844" blue="0.36278306118325887" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="i3a-kf-dXa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="133" id="R2X-QR-T2F"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="i3a-kf-dXa" secondAttribute="bottom" constant="140.5" id="Vyz-Lf-r3M"/>
                 <constraint firstAttribute="trailing" secondItem="i3a-kf-dXa" secondAttribute="trailing" id="gxB-Lu-TcO"/>
+                <constraint firstItem="i3a-kf-dXa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="pZq-sv-1tf"/>
                 <constraint firstItem="i3a-kf-dXa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xfz-yG-Tbe"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

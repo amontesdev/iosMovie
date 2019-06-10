@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UpViewController" customModule="iOSPeiky" customModuleProvider="target">
             <connections>
+                <outlet property="loading" destination="Jfd-3L-i7P" id="Fjy-dj-REF"/>
                 <outlet property="tableView" destination="Bbm-tH-AKY" id="mXg-24-mXA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,13 +26,19 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Jfd-3L-i7P">
+                    <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                    <color key="color" red="0.32780193959999998" green="0.48778553299999999" blue="0.45773026020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Bbm-tH-AKY" secondAttribute="trailing" id="73H-gH-aw4"/>
                 <constraint firstItem="Bbm-tH-AKY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="J45-9n-odO"/>
+                <constraint firstItem="Jfd-3L-i7P" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="e2F-0H-nPr"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Bbm-tH-AKY" secondAttribute="bottom" id="jA1-UT-1Cq"/>
                 <constraint firstItem="Bbm-tH-AKY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="v98-TN-Jh7"/>
+                <constraint firstItem="Jfd-3L-i7P" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yEm-PU-kE1"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

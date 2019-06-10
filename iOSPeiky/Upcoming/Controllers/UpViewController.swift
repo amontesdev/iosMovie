@@ -12,6 +12,7 @@ class UpViewController: BaseViewController {
     
     //MARK: - IBOulets and Vars
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loading:UIActivityIndicatorView!
     var viewModel : ListUpViewModel?
     private var listMovies : ListUpCellResponse?
     static let cellsNibName =  "ListUpTableViewCell"
@@ -19,6 +20,7 @@ class UpViewController: BaseViewController {
     //MARK: - Lyfe Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        settingNavBar()
         settingTableView()
         self.viewModel?.viewDidLoad()
         tableView.delegate = self
@@ -28,6 +30,12 @@ class UpViewController: BaseViewController {
     //MARK: - Functions
     private func settingTableView() {
         tableView.register(UINib(nibName: UpViewController.cellsNibName, bundle: nil), forCellReuseIdentifier: ListUpTableViewCell.reuseIdentifier)
+    }
+    override func settingNavBar() {
+        self.parent?.title = "Up Comming"
+    }
+    override func hideLoader() {
+        loading.stopAnimating()
     }
 }
 
@@ -53,12 +61,10 @@ extension UpViewController : UITableViewDelegate, UITableViewDataSource{
         let movieName = listMovies?.results?[indexPath.row].title
         let movieOver = listMovies?.results?[indexPath.row].overview
         let movieImageUrl = listMovies?.results?[indexPath.row].backdrop_path
-        
-        UserDefaults.standard.set(movieName!, forKey: "movieName")
-        UserDefaults.standard.set(movieOver!, forKey: "movieOver")
-        UserDefaults.standard.set(movieImageUrl!, forKey: "movieImageUrl")
-        
         let detailVc = DetailMovieViewController()
+        detailVc.filmName = movieName!
+        detailVc.filmOver = movieOver!
+        detailVc.filmImage = movieImageUrl!
         self.navigationController?.pushViewController(detailVc, animated: true)
     }
 }
@@ -69,6 +75,7 @@ extension UpViewController : ListUpViewModelView{
     func retrieveInfoView(info: ListUpCellResponse) {
         self.listMovies = info
         tableView.reloadData()
+        hideLoader()
     }
     
     func noData() {

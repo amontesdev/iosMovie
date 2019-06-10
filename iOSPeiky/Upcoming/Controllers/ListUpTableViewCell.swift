@@ -16,7 +16,7 @@ class ListUpTableViewCell: UITableViewCell {
     
     
     
-    //Mark: -Functions and IBActions
+    //Mark: -Functions
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

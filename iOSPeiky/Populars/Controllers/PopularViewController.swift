@@ -12,6 +12,7 @@ class PopularViewController: BaseViewController {
 
     //MARK: - IBOulets and Vars
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     var viewModel : ListPopularViewModel?
     private var listMovies : ListPopularCellResponse?
     static let cellsNibName =  "ListPopularTableViewCell"
@@ -19,7 +20,7 @@ class PopularViewController: BaseViewController {
     //MARK: - Lyfe Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        settingNavBar()        
+        settingNavBar()
         settingTableView()
         self.viewModel?.viewDidLoad()
         tableView.delegate = self
@@ -29,6 +30,12 @@ class PopularViewController: BaseViewController {
     //MARK: - Functions
     private func settingTableView() {
         tableView.register(UINib(nibName: PopularViewController.cellsNibName, bundle: nil), forCellReuseIdentifier: ListPopularTableViewCell.reuseIdentifier)
+    }
+    override func settingNavBar() {
+        self.parent?.title = "Popular"
+    }
+    override func hideLoader() {
+        loading.stopAnimating()
     }
 }
 
@@ -54,12 +61,10 @@ extension PopularViewController : UITableViewDelegate, UITableViewDataSource{
         let movieName = listMovies?.results?[indexPath.row].title
         let movieOver = listMovies?.results?[indexPath.row].overview
         let movieImageUrl = listMovies?.results?[indexPath.row].backdrop_path
-        
-        UserDefaults.standard.set(movieName!, forKey: "movieName")
-        UserDefaults.standard.set(movieOver!, forKey: "movieOver")
-        UserDefaults.standard.set(movieImageUrl!, forKey: "movieImageUrl")
-        
         let detailVc = DetailMovieViewController()
+        detailVc.filmName = movieName!
+        detailVc.filmOver = movieOver!
+        detailVc.filmImage = movieImageUrl!
         self.navigationController?.pushViewController(detailVc, animated: true)
     }
 }
@@ -70,6 +75,7 @@ extension PopularViewController : ListPopularViewModelView{
     func retrieveInfoView(info: ListPopularCellResponse) {
         self.listMovies = info
         tableView.reloadData()
+        hideLoader()
     }
     
     func noData() {
