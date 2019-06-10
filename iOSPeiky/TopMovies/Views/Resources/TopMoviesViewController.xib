@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TopMoviesViewController" customModule="iOSPeiky" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="u8q-1r-FLs" id="Mub-3w-JCn"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u8q-1r-FLs">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="u8q-1r-FLs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="63A-76-VP5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="u8q-1r-FLs" secondAttribute="trailing" id="8bO-KJ-ZuV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="u8q-1r-FLs" secondAttribute="trailing" id="BN8-Pa-QYB"/>
+                <constraint firstItem="u8q-1r-FLs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="FBq-eW-jas"/>
+                <constraint firstItem="u8q-1r-FLs" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Uiv-zb-W5x"/>
+                <constraint firstItem="u8q-1r-FLs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="VdG-N7-arC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="u8q-1r-FLs" secondAttribute="bottom" id="tRm-MQ-5OZ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-359" y="227"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,6 @@
+framework module Pods_iOSPeiky {
+  umbrella header "Pods-iOSPeiky-umbrella.h"
+
+  export *
+  module * { export * }
+}
