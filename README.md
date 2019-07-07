@@ -1,4 +1,4 @@
-# iosPeiky
+# iosMovie
 1. En qué consiste el principio de responsabilidad única? Cuál es su propósito? 
 Respuesta: Para mi el principio de responsabilidad única consiste en solo delegarle una unica responsabilidad a algo, en este
 caso una clase o una funcion ya que los principios de clean code asi lo señalan.
